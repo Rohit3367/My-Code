@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{   /*
+      Equation of line is Ax+By+C=0
+      We will make use of that
+    */
+    int i,j,k,n,x1,y1,l=0,x0,y0,z,a,b,c;
+    cin>>n;
+    cin>>x0;
+    cin>>y0;
+    int A[n];
+    int B[n];
+    int C[n];
+    
+    cin>>x1;
+    cin>>y1;
+    A[0]=(y1-y0);
+    B[0]=(x0-x1);
+    C[0]=(x0*(y0-y1))+(y0*(x1-x0));
+    l++;  //l will keep count of minimum nugmber of lines
+    
+    for(i=1;i<n;i++)
+    {
+        cin>>x1;
+        cin>>y1;
+        
+        for(j=0;j<l;j++)
+        {
+            a=(A[j]*x1);
+            b=(B[j]*y1);
+            c=C[j];
+            z=a+b+c;
+            if(z==0)
+            {
+                /* 
+                  Point lies on a previously made line 
+                  Hence no new line is needed
+                */ 
+                break;
+            }
+        }
+        if(j==l){
+            /* 
+              Point does not exsist on any given lines.
+              Hence we make a new line. 
+            */
+            A[l]=(y1-y0);
+            B[l]=(x0-x1);
+            C[l]=(x0*(y0-y1))+(y0*(x1-x0));
+            l++;
+        }
+    }
+    
+   
+    cout<<l<<"\n";
+    return 0;
+}
