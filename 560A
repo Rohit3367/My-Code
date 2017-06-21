@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+/*
+ Problem Link: 
+ http://codeforces.com/problemset/problem/560/A
+*/
+int main()
+{   int i,n,min,x;
+    cin>>n;
+    cin>>x;
+    min=x;
+    for(i=2;i<=n;i++){
+        cin>>x;
+        if(x<min){
+            min=x;
+        }
+    }
+    
+    if(min==1){
+        cout<<"-1"<<"\n";
+    }
+    else if(min>1){
+        cout<<"1"<<"\n";
+    }
+    return 0;
+}
