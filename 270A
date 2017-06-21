@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+/*
+ Problem Link: 
+ http://codeforces.com/problemset/problem/270/A
+*/
+int main()
+{   /*
+      Angle of Polyogn(a)=
+      (n-2)*180/n
+      reference:
+      https://en.wikipedia.org/wiki/Regular_polygon
+    */
+    int t,i,a,x;
+    cin>>t;
+    for(i=1;i<=t;i++)
+    {
+        cin>>a;
+        x=180-a;
+        //modify given formula
+        if((360%x)==0){
+            cout<<"YES"<<"\n";
+        }
+        else {
+            cout<<"NO"<<"\n";
+        }
+        
+    }
+    return 0;
+}
